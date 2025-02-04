@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Navigation } from "@/components/navigation"
@@ -8,6 +10,16 @@ import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
+  const handleScrollToContact = () => {
+    const contactElement = document.getElementById("contact")
+    if (contactElement) {
+      contactElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+    }
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -15,12 +27,6 @@ export default function Home() {
       {/* Hero Section */}
       <main className="container mx-auto px-6 py-12">
         <section id="about" className="py-20">
-          <div className="flex items-center gap-2 mb-6">
-            <div className="flex items-center gap-1">
-              <span className="text-sm text-muted-foreground">Full Stack Developer</span>
-            </div>
-          </div>
-
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/50 text-transparent bg-clip-text">
             Building scalable
             <br />
@@ -32,26 +38,26 @@ export default function Home() {
             software solutions. Skilled in optimizing performance, ensuring seamless integration and user experience.
             Adept at mentoring team members and driving projects to successful completion.
           </p>
-
+``
           <div className="flex flex-wrap gap-4">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
+            {/* Smooth scroll trigger */}
+            <button
+              onClick={handleScrollToContact}
+              className="text-muted-foreground hover:text-foreground bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg text-lg"
+            >
               Get in touch
-            </Button>
-            <Link href="/aditya_mathur_resume.pdf" download>
-              <Button size="lg" variant="outline">
-                Download Resume →
-              </Button>
-            </Link>
+            </button>
           </div>
         </section>
 
         <Experience />
         <FeaturedWork />
         <Skills />
-        <Contact />
+        <section id="contact">
+          <Contact />
+        </section>
         <Footer />
       </main>
     </div>
   )
 }
-

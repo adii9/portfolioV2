@@ -1,4 +1,4 @@
-import { Github, Linkedin, FileText } from "lucide-react"
+import { Github, Linkedin, FileText, X } from "lucide-react"
 import Link from "next/link"
 
 export function Footer() {
@@ -15,7 +15,6 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Contact</h3>
             <ul className="space-y-2">
-              <li className="text-sm text-muted-foreground">+91 8972188695</li>
               <li className="text-sm text-muted-foreground">aditya360@live.com</li>
             </ul>
           </div>
@@ -32,14 +31,14 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Connect</h3>
             <div className="flex space-x-4">
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
-                <Github className="w-5 h-5" />
+              <Link href="https://github.com/adii9" className="text-muted-foreground hover:text-foreground" target="_blank" rel="noopener noreferrer">
+                <Github className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
-                <Linkedin className="w-5 h-5" />
+              <Link href="https://www.linkedin.com/in/aditya-mathur-52322b16a/" className="text-muted-foreground hover:text-foreground" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="h-5 w-5" />
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-foreground">
-                <FileText className="w-5 h-5" />
+              <Link href="https://x.com/adii_mathur" className="text-muted-foreground hover:text-foreground" target="_blank" rel="noopener noreferrer">
+                <X className="h-5 w-5" />
               </Link>
             </div>
           </div>
