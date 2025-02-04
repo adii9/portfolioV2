@@ -38,7 +38,6 @@ export default function Home() {
             software solutions. Skilled in optimizing performance, ensuring seamless integration and user experience.
             Adept at mentoring team members and driving projects to successful completion.
           </p>
-``
           <div className="flex flex-wrap gap-4">
             {/* Smooth scroll trigger */}
             <button
